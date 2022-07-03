@@ -1,0 +1,155 @@
+.attribution { font-size: 15px; text-align: center; margin-top: 1rem; }
+.attribution a { color: hsl(178, 100%, 50%, 60%); }
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-size: 18px;
+  font-weight: 300;
+  font-family: 'Outfit', sans-serif;
+  color: hsl(215, 51%, 70%);
+}
+main{
+  /* border: 5px solid hsl(178, 100%, 50%, 60%); */
+  margin: 0 auto;
+  width: 100%;
+  max-width: 14400px; 
+/* to control maximum width since it width is 100%  of its
+   available screen this will stop it growing from 1440 for
+   screen size provided above 1440 pixels */
+  height: 100vh;
+/* however it will always consume 100% of provided height */
+  background-color: hsl(217, 54%, 11%);
+/* This will make the main div a flex Container which will 
+   be helpful to centerliase div or anything placed inside it */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.container{
+  border-radius: 1rem;
+  width: 90%;
+/* This mean this div is going to take only 90% width of
+   its parent which is main */
+  max-width: 360px;
+/* And here we are limiting its width to maximium of 360px
+   if its provided with tons of pixel of width */
+  min-height: 400px;
+/* we have also set a  custom height of minimum 400px for 
+  mobile phone screen so that it wont go smaller than that
+  on mobile screen sizes ---it is for phones only */
+  background-color: hsl(216, 50%, 16%);
+  padding: 1.7rem;
+}
+.nft-img{
+    width: inherit;
+/* will inherit all width of its parent */
+    /* height: inherit; */
+/* will inherit all height of its parent */
+    border-radius: inherit;
+}
+.card-img{
+    position: relative;
+/* this is done so that it can be the parent of a div placed into 
+   it which we are going to make absolute  ------ otherwise
+   it would have been become the child of body which is a default
+   behaviour */
+    width: 100%;
+    border-radius: inherit;
+}
+.active-state{
+    background-color: hsl(178, 100%, 50%, 60%);
+    position: absolute;
+/* in absolute positioning you are able to set an element
+   position relative to it parent  */
+    top: 0;
+    border-radius: 1rem;
+    width:100%;
+    height: 99%;
+/* if you will make height of absolute div as 100% of its parent
+   it will overflow i don't know why, so we have to reduce its width
+   relative to its parent by 1%  */
+    opacity: 0;
+}
+.active-img{ 
+    position:absolute;
+/* this is for the icon image floating inside a floating div  */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+/* remember this function to centralise something in floating cases */
+}
+.active-state:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+/*        ----------------------------BODY-----------------------------------                  */
+.container-body h1{
+    font-size: 33px;
+    font-weight: 600;
+    color: hsl(0, 0%, 100%);
+    margin: 0.5rem 0 0;
+}
+.container-body p{
+  padding: 0.5rem 0 1rem;
+}
+.container-body h1:hover{
+    color: hsl(178, 100%, 50%);
+    cursor: pointer;
+}
+/*           --------------------------pricing----------------------------           */
+.pricing{
+    display: flex;
+    justify-content: space-between;
+}
+.icon-storage{
+    display: flex;
+    align-items: center;
+}
+.price-tag{
+    font-weight: 400;
+}
+.price-tag:hover{
+    color: hsl(178, 100%, 50%);
+    cursor: pointer;
+}
+.icon-storage img{
+    margin-right: 0.6rem;
+}
+hr{
+    margin: 1rem 0 1rem;
+    width: 100%;
+    border: 1.5px solid hsl(215, 32%, 27%);
+    border-width: 1.5px 0 0 ;
+}
+/*          ---------------------Avatar--------------------------             */
+.avatar-div{
+    display: flex;
+    align-items: center;
+}
+.avatar-img{
+    width: 30px;
+    margin-right: 1rem;
+    border-radius: 100%;
+    border: 1.5px solid hsl(0, 0%, 100%);
+}
+span:hover{
+    color: hsl(178, 100%, 50%);
+    cursor: pointer;
+}
+
+@media (max-width: 390px)  {
+  .container-body h1{
+    font-size: 25px;
+  }
+  p{
+    font-size: 17px;
+  }
+  .attribution{
+      font-size: 12px;
+  }
+}
